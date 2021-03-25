@@ -48,10 +48,6 @@ public class PhotoController {
         File thumbnailFile = new File(randomFileName.substring(0, randomFileName.lastIndexOf('.'))
                 + "-thumbnail.jpg");
 
-        File original = new File(randomFileName);
-        File thumbnail = new File(thumbnailFile.getPath());
-
-
         try {
             file.transferTo(new File(randomFileName));
             Thumbnails.of(randomFileName)
