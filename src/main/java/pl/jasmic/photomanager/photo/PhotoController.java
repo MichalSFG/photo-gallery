@@ -23,7 +23,7 @@ public class PhotoController {
         this.photoService = photoService;
     }
 
-    private static final String IMAGES_DIRECTORY = "/home/michal/Downloads/photos/";
+//    private static final String IMAGES_DIRECTORY = "/home/michal/Downloads/photos/";
 
     @ModelAttribute("photos")
     public List<Photo> allPhotos() {
@@ -49,10 +49,10 @@ public class PhotoController {
                 + "-thumbnail.jpg");
 
         try {
-            file.transferTo(new File(IMAGES_DIRECTORY + randomFileName));
-            Thumbnails.of(IMAGES_DIRECTORY + randomFileName)
+            file.transferTo(new File(randomFileName));
+            Thumbnails.of(randomFileName)
                     .size(250, 250)
-                    .toFile(IMAGES_DIRECTORY + thumbnailFile);
+                    .toFile(thumbnailFile);
         } catch (IllegalStateException | IOException e) {
             e.printStackTrace();
         }
