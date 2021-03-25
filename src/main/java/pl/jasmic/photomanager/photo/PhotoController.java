@@ -2,11 +2,11 @@ package pl.jasmic.photomanager.photo;
 
 import lombok.extern.slf4j.Slf4j;
 import net.coobird.thumbnailator.Thumbnails;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.apache.commons.lang3.RandomStringUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,7 +44,7 @@ public class PhotoController {
             return "gallery";
         }
 
-        final String randomFileName = RandomStringUtils.randomAlphabetic(10) + ".jpg";
+        final String randomFileName = RandomStringUtils.randomAlphabetic(10).toLowerCase() + ".jpg";
         File thumbnailFile = new File(randomFileName.substring(0, randomFileName.lastIndexOf('.'))
                 + "-thumbnail.jpg");
 
