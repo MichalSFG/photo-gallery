@@ -44,9 +44,13 @@ public class PhotoController {
             return "gallery";
         }
 
-        final String randomFileName = "/" + RandomStringUtils.randomAlphabetic(10).toLowerCase() + ".jpg";
+        final String randomFileName = "/resources/img/" + RandomStringUtils.randomAlphabetic(10).toLowerCase() + ".jpg";
         File thumbnailFile = new File(randomFileName.substring(0, randomFileName.lastIndexOf('.'))
                 + "-thumbnail.jpg");
+
+        File original = new File(randomFileName);
+        File thumbnail = new File(thumbnailFile.getPath());
+
 
         try {
             file.transferTo(new File(randomFileName));
