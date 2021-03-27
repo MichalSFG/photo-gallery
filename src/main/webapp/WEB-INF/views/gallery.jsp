@@ -33,6 +33,8 @@
            onclick="if(confirm('Are you sure, you want to delete this photo?')===false) return false;"
            title="Delete ${item.name}">[x]</a>
     </c:forEach>
+    <a href="<c:url value="/resources/img/5.jpg"/>" data-lightbox="photoGallery" data-title="in the sky">
+        <img src="<c:url value="/resources/img/5.jpg"/>" title="in the sky" alt=""></a>
 </div>
 </body>
 </html>
